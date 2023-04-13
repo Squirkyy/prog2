@@ -30,8 +30,9 @@ public class IntList {
         }
         return num;
     }
-    public static int[] addOne (int[] numbers) {
-        return intToList(1+listToInt(numbers));
+
+    public static int[] addOne(int[] numbers) {
+        return intToList(1 + listToInt(numbers));
     }
 
     private static void testFunction() {
@@ -52,7 +53,9 @@ public class IntList {
         System.out.println(Arrays.toString(number2array) + " is the following as an int: " + listToInt(number2array));
         System.out.println("");
         System.out.println("addOne:");
-        System.out.println(Arrays.toString(number1array) + " is the following when added 1: " + Arrays.toString(addOne(number1array)));
-        System.out.println(Arrays.toString(number2array) + " is the following when added 1: " + Arrays.toString(addOne(number2array)));
+        System.out.println(Arrays.toString(number1array) + " is the following when added 1: "
+                + Arrays.toString(addOne(number1array)));
+        System.out.println(Arrays.toString(number2array) + " is the following when added 1: "
+                + Arrays.toString(addOne(number2array)));
     }
 }
