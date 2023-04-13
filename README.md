@@ -19,15 +19,16 @@ The repository contains five assignments, each of which is stored in its own sub
 ## Usage
 
 To use this repository, simply clone it to your local machine using the following command:
-
+```
 git clone https://github.com/Squirkyy/prog2.git
+```
 
 Once you have cloned the repository, you can navigate to the individual assignment folders to view the code and any accompanying documentation.
 
 Requirements for running or debugging is the JDK. Run a program using the following command:
-
+```
 java NAME.java
-
+```
 ## Credits
 
 This repository was created by Darius Vollmer. If you have any questions or comments, please feel free to reach out to me.
