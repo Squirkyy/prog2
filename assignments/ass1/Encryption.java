@@ -1,7 +1,12 @@
 public class Encryption {
     public static void main(String[] args) {
-        char[] test = { 'H', 'A', 'L', 'L', 'O' };
-        int[] keys = generateKeys(5, 256);
+        testFunction();
+    }
+
+    private static void testFunction() {
+        char[] test = { 'H', 'E', 'L', 'L', 'O', ' ', 'W', 'O', 'R', 'L', 'D' };
+        char[] test2 = { 'P', 'R', 'O', 'G', ' ', 'I', 'I' };
+        int[] keys = generateKeys(test.length, 256);
         printCharArray(test);
         int[] encrypt = encrypt(test, keys);
         for (int i : encrypt) {
@@ -10,7 +15,17 @@ public class Encryption {
         System.out.println("");
         char[] decrypt = decrypt(encrypt, keys);
         printCharArray(decrypt);
+        System.out.println("");
 
+        int[] keys2 = generateKeys(test2.length, 256);
+        printCharArray(test2);
+        int[] encrypt2 = encrypt(test2, keys2);
+        for (int i : encrypt2) {
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+        char[] decrypt2 = decrypt(encrypt2, keys2);
+        printCharArray(decrypt2);
     }
 
     public static int nextInt(int a, int b, int m, int x) {
