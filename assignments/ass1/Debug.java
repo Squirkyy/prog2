@@ -55,4 +55,7 @@ class Debug {
  * 
  * Error 5: wrong for loop incrementation Zeile 10
  * i++ statt i--
+ * 
+ * Error 6: wrong return Boolean
+ * return false statt true in Zeile 12
  */
