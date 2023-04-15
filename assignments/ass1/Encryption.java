@@ -54,7 +54,11 @@ public class Encryption {
     public static int[] encrypt(char[] letters, int[] keys) {
         int[] encryptArr = new int[letters.length];
         for (int i = 0; i < letters.length; i++) {
-            encryptArr[i] = (((int) letters[i]) ^ keys[i]);
+            if (i == 0) {
+                encryptArr[i] = (((int) letters[i]) ^ keys[i]);
+            } else {
+                encryptArr[i] = (((int) letters[i]) ^ keys[i]) ^ encryptArr[i - 1];
+            }
         }
         return encryptArr;
     }
@@ -62,7 +66,11 @@ public class Encryption {
     public static char[] decrypt(int[] letters, int[] keys) {
         char[] encryptArr = new char[letters.length];
         for (int i = 0; i < letters.length; i++) {
-            encryptArr[i] = (char) (letters[i] ^ keys[i]);
+            if (i == 0) {
+                encryptArr[i] = (char) (letters[i] ^ keys[i]);
+            } else {
+                encryptArr[i] = (char) (letters[i] ^ keys[i] ^ letters[i - 1]);
+            }
         }
         return encryptArr;
     }
