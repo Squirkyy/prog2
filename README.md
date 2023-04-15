@@ -6,7 +6,7 @@ This repository contains the assignments for the Programming 2 course, which foc
 
 The repository contains five assignments, each of which is stored in its own subfolder within the `assignments` folder. The assignments are as follows:
 
-- [ ] Assignment 1: 12.04.2023 -> 18.04.2023
+- [X] Assignment 1: 12.04.2023 -> 18.04.2023
 
 - [ ] Assignment 2: 19.04.2023 -> 25.04.2023
 
