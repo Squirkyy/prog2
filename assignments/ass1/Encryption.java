@@ -6,7 +6,7 @@ public class Encryption {
     private static void testFunction() {
         char[] test = { 'H', 'E', 'L', 'L', 'O', ' ', 'W', 'O', 'R', 'L', 'D' };
         char[] test2 = { 'P', 'R', 'O', 'G', ' ', 'I', 'I' };
-        int[] keys = generateKeys(test.length, 256);
+        int[] keys = generateKeys(test.length, 3);
         printCharArray(test);
         int[] encrypt = encrypt(test, keys);
         for (int i : encrypt) {
@@ -17,7 +17,7 @@ public class Encryption {
         printCharArray(decrypt);
         System.out.println("");
 
-        int[] keys2 = generateKeys(test2.length, 256);
+        int[] keys2 = generateKeys(test2.length, 3);
         printCharArray(test2);
         int[] encrypt2 = encrypt(test2, keys2);
         for (int i : encrypt2) {
@@ -36,9 +36,9 @@ public class Encryption {
         int[] keys = new int[size];
         for (int i = 0; i < size; i++) {
             if (i == 0) {
-                keys[i] = nextInt(3, 7, 28, start);
+                keys[i] = nextInt(7, 28, 256, start);
             } else {
-                keys[i] = nextInt(3, 7, 28, keys[i - 1]);
+                keys[i] = nextInt(7, 28, 256, keys[i - 1]);
             }
         }
         return keys;
