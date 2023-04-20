@@ -65,11 +65,55 @@ public class Tree {
 
     // Insertion of value
     public void insertValue(int value) {
-        if (this.value < value) {
-            this.right.insertValue(value);
+        // if (value == null)
+        if (value < this.value) {
+            if (this.left == null) {
+                this.left = new Tree(value);
+            } else {
+                this.left.insertValue(value);
+            }
+        } else {
+            if (this.right == null) {
+                this.right = new Tree(value);
+            } else {
+                this.right.insertValue(value);
+            }
         }
-        if (this.value > value) {
-            this.left.insertValue(value);
+    }
+
+    // Search through
+    public boolean contains(int value) {
+        if (this.value == value)
+            return true;
+        else if (value > this.value && this.right != null) {
+            return this.right.contains(value);
+        } else if (value < this.value && this.left != null) {
+            return this.left.contains(value);
+        } else {
+            return false;
+        }
+    }
+
+    // Compare two trees
+    public boolean hasSameValues(Tree other) {
+        if (other == null)
+            return false;
+        if (this.value == other.value) {
+            if (other.left != null && this.left != null) {
+                if (!this.left.hasSameValues(other.left))
+                    return false;
+            } else if (other.left != null || this.left != null) {
+                return false;
+            }
+            if (other.right != null && this.right != null) {
+                if (!this.right.hasSameValues(other.right))
+                    return false;
+            } else if (this.right != null || other.right != null) {
+                return false;
+            }
+            return true;
+        } else {
+            return false;
         }
     }
 
