@@ -9,17 +9,19 @@ class Main {
         for (Item i : test.getItems()) {
             System.out.println(i.name);
         }
-        Item testItem = new Item();
-        testItem.name = "Item 4";
-        testItem.description = "Description 4";
-        testItem.price = (float) 4;
-        testItem.user = new User("Test", "test");
+        Item testItem = new Item("Item 4", (float) 4.5, new User("Test", "test"), "Description 4");
         System.out.println(test.removeItem(test.getItems()[4]));
         for (Item i : test.getItems()) {
-            System.out.println(i.name);
+            if (i != null)
+                System.out.println(i.name);
         }
         System.out.println(test.getRemainingSpace(test.getItems()));
         System.out.println(test.addItem(testItem));
+        for (Item i : test.getItems()) {
+            if (i != null)
+                System.out.println(i.name);
+        }
+        System.out.println(test.getRemainingSpace(test.getItems()));
     }
 
     // TESTFUNCTION for creating a items array for testing reasons
