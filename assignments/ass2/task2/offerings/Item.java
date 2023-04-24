@@ -28,6 +28,36 @@ public class Item {
     }
 
     public float getPrice () {
-        return 
+        return this.price;
+    }
+    public void setPrice (float price) {
+        this.price = price;
+    }
+
+    public String getDescription () {
+        return this.description;
+    }
+
+    public void setDescription (String description) {
+        this.description = description;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public String str (boolean showUser) {
+        StringBuilder sb = new StringBuilder("[ ");
+        sb.append("Name: " + this.name);
+        sb.append(", ");
+        sb.append("Price: " + this.price);
+        sb.append(", ");
+        sb.append("Description: " + this.description);
+        if (showUser) {
+            sb.append(", ");
+            sb.append("User: " + this.user);
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }

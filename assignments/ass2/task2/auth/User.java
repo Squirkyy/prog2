@@ -76,7 +76,7 @@ public class User {
         } else {
             int index = 0;
             for (Item i : this.items) {
-                if (i.name.equals(item.name) && i.user.equals(item.user)) {
+                if (i.getName().equals(item.getName()) && i.getUser().equals(item.getUser())) {
                     items[index] = null;
                     return true;
                 }
@@ -84,6 +84,30 @@ public class User {
             }
         }
         return false;
+    }
+
+    public String str(boolean showPassword, boolean showItemAmount) {
+        StringBuilder sb = new StringBuilder("[");
+        sb.append("Username: " + getUsername());
+        if (showPassword) {
+            sb.append(", ");
+            sb.append("Password: " + getPassword());
+        }
+        if (showItemAmount) {
+            sb.append(", ");
+            sb.append("Number of Items: ");
+            sb.append(this.items.length-getRemainingSpace(this.items));
+        }
+        else {
+            sb.append(", ");
+            sb.append("Items: ");
+            for (Item i : this.items) {
+                if (i != null) {
+                sb.append(i.str(false));
+            }}
+        }
+        sb.append("]");
+        return sb.toString();
     }
 
     // public boolean removeItem(Item item) {
