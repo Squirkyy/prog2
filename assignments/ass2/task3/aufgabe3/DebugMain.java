@@ -8,26 +8,28 @@ class DebugMain {
         DebugData b = new DebugData(1.0, 1.0);
         // Result should be approx. 5.18
         System.out.println(String.format("The distance between %s and %s is %g",
-            a.str(), b.str(), a.distance(b)));
+                a.str(), b.str(), a.distance(b)));
     }
 }
 
 /*
- * Error 1: Exception in thread "main" java.lang.Error: Unresolved compilation problems: 
-        DebugData cannot be resolved to a type
-        DebugData cannot be resolved to a type
-        DebugData cannot be resolved to a type
-        DebugData cannot be resolved to a type
-
-        at aufgabe3.DebugMain.main(DebugMain.java:6)
- *  -> Import aufgabe3.data.DebugData
+ * Error 1: Exception in thread "main" java.lang.Error: Unresolved compilation
+ * problems:
+ * DebugData cannot be resolved to a type
+ * DebugData cannot be resolved to a type
+ * DebugData cannot be resolved to a type
+ * DebugData cannot be resolved to a type
+ * 
+ * at aufgabe3.DebugMain.main(DebugMain.java:6)
+ * -> Import aufgabe3.data.DebugData
  * 
  * 
  * Error 2: ''
  * -> Make the class DebugData public
  * 
  * 
- * Error 3: DebugData Line 10: Constructor expected int which does not fit the fields given
+ * Error 3: DebugData Line 10: Constructor expected int which does not fit the
+ * fields given
  * -> Signature change to double
  * 
  * 

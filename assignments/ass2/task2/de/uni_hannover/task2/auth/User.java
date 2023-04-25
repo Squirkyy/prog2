@@ -96,15 +96,15 @@ public class User {
         if (showItemAmount) {
             sb.append(", ");
             sb.append("Number of Items: ");
-            sb.append(this.items.length-getRemainingSpace(this.items));
-        }
-        else {
+            sb.append(this.items.length - getRemainingSpace(this.items));
+        } else {
             sb.append(", ");
             sb.append("Items: ");
             for (Item i : this.items) {
                 if (i != null) {
-                sb.append(i.str(false));
-            }}
+                    sb.append(i.str(false));
+                }
+            }
         }
         sb.append("]");
         return sb.toString();

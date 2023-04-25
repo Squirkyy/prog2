@@ -65,7 +65,6 @@ public class Tree {
         }
         return sb.toString();
     }
-    
 
     // Insertion of value
     public void insertValue(int value) {

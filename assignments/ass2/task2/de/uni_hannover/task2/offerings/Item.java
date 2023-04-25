@@ -21,63 +21,56 @@ public class Item {
         }
     }
 
-    private boolean isUser (String password) {
+    private boolean isUser(String password) {
         if (this.user.getPassword() == password) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
-
 
     public String getName() {
         return this.name;
     }
 
     public void setName(String name, String passwort) throws AuthenticationException {
-        if (isUser(passwort))
-        {
+        if (isUser(passwort)) {
             this.name = name;
-        }
-        else {
+        } else {
             throw new AuthenticationException("Incorrect Passwort.");
         }
-        
+
     }
 
-    public float getPrice () {
+    public float getPrice() {
         return this.price;
     }
-    public void setPrice (float price, String passwort) throws AuthenticationException {
-        if (isUser(passwort))
-        {
+
+    public void setPrice(float price, String passwort) throws AuthenticationException {
+        if (isUser(passwort)) {
             this.price = price;
-        }
-        else {
+        } else {
             throw new AuthenticationException("Incorrect Passwort.");
-        }    
+        }
     }
 
-    public String getDescription () {
+    public String getDescription() {
         return this.description;
     }
 
-    public void setDescription (String description, String passwort) throws AuthenticationException {
-        if (isUser(passwort))
-        {
+    public void setDescription(String description, String passwort) throws AuthenticationException {
+        if (isUser(passwort)) {
             this.description = description;
-        }
-        else {
+        } else {
             throw new AuthenticationException("Incorrect Passwort.");
-        } 
+        }
     }
 
     public User getUser() {
         return this.user;
     }
 
-    public String str (boolean showUser) {
+    public String str(boolean showUser) {
         StringBuilder sb = new StringBuilder("[ ");
         sb.append("Name: " + this.name);
         sb.append(", ");
