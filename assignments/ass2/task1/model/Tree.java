@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Tree {
     // Fields
     private int value;
@@ -96,25 +98,9 @@ public class Tree {
 
     // Compare two trees
     public boolean hasSameValues(Tree other) {
-        if (other == null)
-            return false;
-        if (this.value == other.value) {
-            if (other.left != null && this.left != null) {
-                if (!this.left.hasSameValues(other.left))
-                    return false;
-            } else if (other.left != null || this.left != null) {
-                return false;
-            }
-            if (other.right != null && this.right != null) {
-                if (!this.right.hasSameValues(other.right))
-                    return false;
-            } else if (this.right != null || other.right != null) {
-                return false;
-            }
-            return true;
-        } else {
-            return false;
-        }
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        
+        return false;
     }
 
 }
