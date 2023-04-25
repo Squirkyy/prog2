@@ -2,35 +2,79 @@ import model.Tree;
 
 public class Main {
     public static void main(String[] args) {
-        Tree test1 = TestTree1();
-        Tree test2 = TestTree2();
-        test1.str();
-        test2.str();
+        testTree();
+        System.out.println();
+        System.out.println();
+        testTree2();
     }
 
-    public static Tree TestTree1() {
-        Tree root = new Tree(4);
-        Tree leftChild = new Tree(2);
-        Tree rightChild = new Tree(6);
-        root.setLeftTree(leftChild);
-        root.setRightTree(rightChild);
-        leftChild.setLeftTree(new Tree(1));
-        leftChild.setRightTree(new Tree(3));
-        rightChild.setLeftTree(new Tree(5));
-        rightChild.setRightTree(new Tree(7));
-        return root;
+    protected static void testTree() {
+        Tree tree1 = new Tree(5);
+    
+        tree1.insertValue(2);
+        tree1.insertValue(7);
+        tree1.insertValue(1);
+        tree1.insertValue(9);
+        tree1.insertValue(4);
+    
+        System.out.println("Tree 1: " + tree1.str());
+    
+        int valueToFind = 4;
+        if (tree1.contains(valueToFind)) {
+            System.out.println("Tree 1 contains " + valueToFind);
+        } else {
+            System.out.println("Tree 1 totally does not contain " + valueToFind);
+        }
+    
+        Tree tree2 = new Tree(5);
+        tree2.insertValue(2);
+        tree2.insertValue(7);
+        tree2.insertValue(1);
+        tree2.insertValue(9);
+        tree2.insertValue(4);
+    
+        System.out.println("Tree 2: " + tree2.str());
+    
+        if (tree1.hasSameValues(tree2)) {
+            System.out.println("Tree 1 and Tree 2 pass the vibe check");
+        } else {
+            System.out.println("Tree 1 and Tree 2 do not pass the vibe check");
+        }
     }
 
-    public static Tree TestTree2() {
-        Tree root = new Tree(10);
-        Tree leftChild = new Tree(5);
-        Tree rightChild = new Tree(15);
-        root.setLeftTree(leftChild);
-        root.setRightTree(rightChild);
-        leftChild.setLeftTree(new Tree(2));
-        leftChild.setRightTree(new Tree(7));
-        rightChild.setLeftTree(new Tree(13));
-        rightChild.setRightTree(new Tree(17));
-        return root;
+    protected static void testTree2() {
+        Tree tree1 = new Tree(15);
+    
+        tree1.insertValue(12);
+        tree1.insertValue(17);
+        tree1.insertValue(11);
+        tree1.insertValue(19);
+        tree1.insertValue(14);
+    
+        System.out.println("Tree 1: " + tree1.str());
+    
+        int valueToFind = 14;
+        if (tree1.contains(valueToFind)) {
+            System.out.println("Tree 1 contains " + valueToFind);
+        } else {
+            System.out.println("Tree 1 does not contain " + valueToFind);
+        }
+    
+        Tree tree2 = new Tree(15);
+        tree2.insertValue(12);
+        tree2.insertValue(17);
+        tree2.insertValue(11);
+        tree2.insertValue(19);
+        tree2.insertValue(14);
+    
+        System.out.println("Tree 2: " + tree2.str());
+    
+        if (tree1.hasSameValues(tree2)) {
+            System.out.println("Tree 1 and Tree 2 have the same values");
+        } else {
+            System.out.println("Tree 1 and Tree 2 do not have the same values");
+        }
     }
+    
+    
 }
