@@ -1,11 +1,14 @@
 package auth;
 
+import offerings.Category;
+
 import offerings.Item;
 
 /**
  * Provides the User in an authenticated context (U+PW)
+ * 
  * @author Darius Vollmer
- * @version 25th April 
+ * @version 1st May 2023
  */
 public class User {
     /**
@@ -24,6 +27,7 @@ public class User {
     /**
      * Constructor for a User
      * Limits the ammount of Items they can offer to 10
+     * 
      * @param userName of the new User
      * @param password of the new User
      */
@@ -35,6 +39,7 @@ public class User {
 
     /**
      * Getter of the Username
+     * 
      * @return the Username
      */
     public String getUsername() {
@@ -43,6 +48,7 @@ public class User {
 
     /**
      * Setter of the username
+     * 
      * @param username that the user should have
      */
     public void setUsername(String username) {
@@ -51,6 +57,7 @@ public class User {
 
     /**
      * Getter for the password
+     * 
      * @return the password
      */
     public String getPassword() {
@@ -59,6 +66,7 @@ public class User {
 
     /**
      * Setter of the passwrd
+     * 
      * @param password that the user should have
      */
     public void setPassword(String password) {
@@ -67,20 +75,25 @@ public class User {
 
     /**
      * Gets the Items
+     * 
      * @return all Items that the User has
      */
     public Item[] getItems() {
         return items;
     }
+
     /**
-     * Setter for ALL items of the User 
+     * Setter for ALL items of the User
+     * 
      * @param items (new) that the user should own
      */
     public void setItems(Item[] items) {
         this.items = items;
     }
+
     /**
      * Computes the ammount of null spaces in an Array of Users
+     * 
      * @param array of Users.
      * @return Ammount of null spaces in given Array
      */
@@ -96,6 +109,7 @@ public class User {
 
     /**
      * Adds the Item to the Items-Array if there is space
+     * 
      * @param item that is to be added
      * @return boolean wheather it was successful
      */
@@ -119,6 +133,7 @@ public class User {
 
     /**
      * Removes the Item in the Items-Array if it's there
+     * 
      * @param item that is to be removed
      * @return boolean wheather it was successful
      */
@@ -140,8 +155,10 @@ public class User {
 
     /**
      * Visualizes the User in a String
-     * @param showPassword decides whether the password should be printed
-     * @param showItemAmount decides whether the ammount of the items should be printed
+     * 
+     * @param showPassword   decides whether the password should be printed
+     * @param showItemAmount decides whether the ammount of the items should be
+     *                       printed
      * @return String of the User in a visualized manner
      */
     public String str(boolean showPassword, boolean showItemAmount) {
@@ -166,6 +183,57 @@ public class User {
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    /**
+     * Visualizes the User in a String
+     * 
+     * @param showPassword   decides whether the password should be printed
+     * @param showItemAmount decides whether the ammount of the items should be
+     *                       printed
+     * @param category       that should be filtered
+     * @return String of the User in a visualized manner
+     */
+    public String str(boolean showPassword, boolean showItemAmount, Category category) {
+        if (!hasItemsOfCategory(category)) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder("[");
+        sb.append("Username: " + getUsername());
+        if (showPassword) {
+            sb.append(", ");
+            sb.append("Password: " + getPassword());
+        }
+        if (showItemAmount) {
+            sb.append(", ");
+            sb.append("Number of Items: ");
+            sb.append(this.items.length - getRemainingSpace(this.items));
+        } else {
+            sb.append(", ");
+            sb.append("Items: ");
+            for (Item i : this.items) {
+                if (i != null) {
+                    sb.append(i.str(false, category));
+                }
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    /**
+     * Helper that determines whether a user has Items of the category
+     * 
+     * @param category of the item that's to be filtered
+     * @return whether such items exist
+     */
+    private boolean hasItemsOfCategory(Category category) {
+        for (Item i : items) {
+            if (category.isSameCategory(i)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // public boolean removeItem(Item item) {

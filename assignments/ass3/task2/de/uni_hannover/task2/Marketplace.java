@@ -1,9 +1,13 @@
+import offerings.Category;
+
 import auth.User;
 
 /**
- * This Class provides the Marketplace on which Users are able to place items for selling.
+ * This Class provides the Marketplace on which Users are able to place items
+ * for selling.
+ * 
  * @author Darius Vollmer
- * @version 25th April 2023
+ * @version 1st May 2023
  */
 public class Marketplace {
     /**
@@ -13,6 +17,7 @@ public class Marketplace {
 
     /**
      * Constructor for Marketplace. Sets the max ammount of users to 10.
+     * 
      * @return A newly constructed Marketplace.
      */
     public Marketplace() {
@@ -21,6 +26,7 @@ public class Marketplace {
 
     /**
      * Computes the ammount of null spaces in an Array of Users
+     * 
      * @param array of Users.
      * @return Ammount of null spaces in given Array
      */
@@ -36,6 +42,7 @@ public class Marketplace {
 
     /**
      * Adds user to the Array and reports whether it was successful
+     * 
      * @param user to be added
      * @return Boolean to indicate whether it succeeded
      */
@@ -59,6 +66,7 @@ public class Marketplace {
 
     /**
      * Removes the user to the Array and reports whether it was successful
+     * 
      * @param user to be removed
      * @return Boolean to indicate whether it succeeded
      */
@@ -80,6 +88,7 @@ public class Marketplace {
 
     /**
      * Builds the marketplace in String format
+     * 
      * @return String visualization of the Marketplace
      */
     public String str() {
@@ -87,6 +96,24 @@ public class Marketplace {
         for (User u : this.user) {
             if (u != null) {
                 sb.append(u.str(false, false));
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    /**
+     * A filter function that takes in a category and returns all items of that
+     * category
+     * 
+     * @param category that is to be filtered
+     * @return user + items in that category
+     */
+    public String filterMarket(Category category) {
+        StringBuilder sb = new StringBuilder("[");
+        for (User u : this.user) {
+            if (u != null) {
+                sb.append(u.str(false, false, category));
             }
         }
         sb.append("]");

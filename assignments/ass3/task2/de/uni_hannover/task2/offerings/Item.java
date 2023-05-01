@@ -6,8 +6,9 @@ import auth.User;
 
 /**
  * Provides the Item to the User for Trading purposes
+ * 
  * @author Darius Vollmer
- * @version 25th April 
+ * @version 1st May 2023
  */
 public class Item {
     /**
@@ -28,14 +29,22 @@ public class Item {
     String description;
 
     /**
+     * References a category
+     */
+    Category category;
+
+    /**
      * Constructor for Item
-     * @param name for the new Item
-     * @param price for the new Item
-     * @param user that owns the item
+     * 
+     * @param name        for the new Item
+     * @param price       for the new Item
+     * @param user        that owns the item
      * @param description that summurizes the item
+     * @param category    that the Item falls into
      * @throws IllegalArgumentException when price is negative
      */
-    public Item(String name, Float price, User user, String description) throws IllegalArgumentException {
+    public Item(String name, Float price, User user, String description, Category category)
+            throws IllegalArgumentException {
         if (price < 0) {
             throw new IllegalArgumentException("Price must be a non negative value");
         } else {
@@ -43,11 +52,13 @@ public class Item {
             this.price = price;
             this.user = user;
             this.description = description;
+            this.category = category;
         }
     }
 
     /**
      * Helper that verifies the user by password
+     * 
      * @param password of the User
      * @return boolean that indicates if it is the user
      */
@@ -60,15 +71,42 @@ public class Item {
     }
 
     /**
+     * Gets the category of the item
+     * 
+     * @return the category of the item
+     */
+    public Category getCategory() {
+        return this.category;
+    }
+
+    /**
+     * Sets the category of the Item if the User is verified
+     * 
+     * @param category (new) of the item
+     * @param password to verify the user
+     * @throws AuthenticationException if the password is incorrect
+     */
+    public void setCategory(Category category, String password) throws AuthenticationException {
+        if (isUser(password)) {
+            this.category = category;
+        } else {
+            throw new AuthenticationException("Incorrect Passwort.");
+        }
+    }
+
+    /**
      * Getter for the name of the object
+     * 
      * @return name of the object
      */
     public String getName() {
         return this.name;
     }
+
     /**
      * Sets the name of the Item if the User is verified
-     * @param name (new) of the item
+     * 
+     * @param name     (new) of the item
      * @param passwort to verify the user
      * @throws AuthenticationException if the password is incorrect
      */
@@ -80,8 +118,10 @@ public class Item {
         }
 
     }
+
     /**
      * Gets the price of the object
+     * 
      * @return price of the object
      */
     public float getPrice() {
@@ -90,7 +130,8 @@ public class Item {
 
     /**
      * Sets the price of the Item if the User is verified
-     * @param price (new) of the item
+     * 
+     * @param price    (new) of the item
      * @param passwort to verify the user
      * @throws AuthenticationException if the password is incorrect
      */
@@ -104,6 +145,7 @@ public class Item {
 
     /**
      * Gets the description of the Item
+     * 
      * @return description of the item
      */
     public String getDescription() {
@@ -112,8 +154,9 @@ public class Item {
 
     /**
      * Sets the description of the Item if the User is verified
+     * 
      * @param description (new) of the item
-     * @param passwort to verify the user
+     * @param passwort    to verify the user
      * @throws AuthenticationException if the password is incorrect
      */
     public void setDescription(String description, String passwort) throws AuthenticationException {
@@ -126,6 +169,7 @@ public class Item {
 
     /**
      * Gets the owner of the Item
+     * 
      * @return User that ownes it
      */
     public User getUser() {
@@ -134,7 +178,9 @@ public class Item {
 
     /**
      * Visualizes the Item in the form of a String
-     * @param showUser that changes whether the User should be printed along side the ITem
+     * 
+     * @param showUser that changes whether the User should be printed along side
+     *                 the Item
      * @return String visualization of the Item
      */
     public String str(boolean showUser) {
@@ -144,6 +190,36 @@ public class Item {
         sb.append("Price: " + this.price);
         sb.append(", ");
         sb.append("Description: " + this.description);
+        sb.append(", ");
+        sb.append("Category: " + this.category.str());
+        if (showUser) {
+            sb.append(", ");
+            sb.append("User: " + this.user);
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    /**
+     * Visualizes the Item in the form of a String including a category
+     * 
+     * @param showUser that changes whether the User should be printed along side
+     *                 the Item
+     * @param category that should be filtered
+     * @return String visualization of the Item
+     */
+    public String str(boolean showUser, Category category) {
+        if (!category.isSameCategory(this)) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder("[ ");
+        sb.append("Name: " + this.name);
+        sb.append(", ");
+        sb.append("Price: " + this.price);
+        sb.append(", ");
+        sb.append("Description: " + this.description);
+        sb.append(", ");
+        sb.append("Category: " + this.category.str());
         if (showUser) {
             sb.append(", ");
             sb.append("User: " + this.user);
