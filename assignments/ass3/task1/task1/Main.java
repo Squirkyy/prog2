@@ -8,3 +8,8 @@ public class Main {
         gw.play();
     }
 }
+
+/*
+ * Ich hab mich für diese Sortierung entschieden, da es einen Seperation of
+ * Concern gibt
+ */
