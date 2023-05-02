@@ -1,6 +1,7 @@
-import offerings.Category;
+package de.uni_hannover.task2;
 
-import auth.User;
+import de.uni_hannover.task2.offerings.Category;
+import de.uni_hannover.task2.auth.User;
 
 /**
  * This Class provides the Marketplace on which Users are able to place items

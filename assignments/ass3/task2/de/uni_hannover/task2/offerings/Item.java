@@ -1,8 +1,8 @@
-package offerings;
+package de.uni_hannover.task2.offerings;
 
 import javax.naming.AuthenticationException;
 
-import auth.User;
+import de.uni_hannover.task2.auth.User;
 
 /**
  * Provides the Item to the User for Trading purposes

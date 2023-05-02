@@ -1,8 +1,8 @@
-package auth;
+package de.uni_hannover.task2.auth;
 
-import offerings.Category;
+import de.uni_hannover.task2.offerings.Category;
 
-import offerings.Item;
+import de.uni_hannover.task2.offerings.Item;
 
 /**
  * Provides the User in an authenticated context (U+PW)

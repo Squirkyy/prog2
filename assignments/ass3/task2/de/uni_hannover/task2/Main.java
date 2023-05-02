@@ -1,9 +1,9 @@
-import offerings.Category;
+package de.uni_hannover.task2;
 
+import de.uni_hannover.task2.offerings.Category;
 import javax.naming.AuthenticationException;
-
-import auth.User;
-import offerings.Item;
+import de.uni_hannover.task2.auth.User;
+import de.uni_hannover.task2.offerings.Item;
 
 class Main {
     public static void main(String[] args) {

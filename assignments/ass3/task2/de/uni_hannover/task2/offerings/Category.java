@@ -1,4 +1,4 @@
-package offerings;
+package de.uni_hannover.task2.offerings;
 
 /**
  * An Enum to provide categories for Items
