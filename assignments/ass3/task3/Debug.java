@@ -1,3 +1,22 @@
+class Debug {
+  public static void main(String[] args) {
+    Operator[] ops = new Operator[4]; // Array 1 zu lang
+    ops[0] = Operator.DIVIDE;
+    ops[1] = Operator.SUBTRACT;
+    ops[2] = Operator.MULTIPLY;
+    ops[3] = Operator.ADD;
+
+    Expression[] exp = new Expression[ops.length];
+    for (int i = 0; i < ops.length; ++i) {
+      exp[i] = new Expression(i + 1, i, ops[i]);
+    }
+
+    for (int i = 0; i < ops.length; ++i) {
+      System.out.println(exp[i].evaluate());
+    }
+  }
+}
+
 enum Operator {
   ADD, SUBTRACT, MULTIPLY, DIVIDE
 }
@@ -14,8 +33,9 @@ class Expression {
   }
 
   double evaluate() {
-    if (this.op_ == Operator.DIVIDE && right_ == 0)
-      return (Double) null; // Check if op == divide and right == 0
+    if (this.op_ == Operator.DIVIDE && right_ == 0) {
+      return 0; // Check if op == divide and right == 0
+    }
     switch (this.op_) {
       case ADD: // ADD
         return this.left_ + this.right_;
@@ -27,25 +47,6 @@ class Expression {
         return this.left_ / this.right_;
       default:
         return 0.0;
-    }
-  }
-}
-
-class Debug {
-  public static void main(String[] args) {
-    Operator[] ops = new Operator[4]; // Array 1 zu lang
-    ops[0] = Operator.DIVIDE;
-    ops[1] = Operator.SUBTRACT;
-    ops[2] = Operator.MULTIPLY;
-    ops[3] = Operator.ADD;
-
-    Expression[] exp = new Expression[ops.length];
-    for (int i = 0; i < ops.length; ++i) {
-      exp[i] = new Expression(i + 1, i, ops[i]);
-    }
-
-    for (int i = 0; i < ops.length; ++i) {
-      System.out.println(exp[i].evaluate());
     }
   }
 }
