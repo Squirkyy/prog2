@@ -6,9 +6,6 @@ public class Main {
     public static void main(String[] args) {
         HalfAdder ha = new HalfAdder();
         boolean[] test = ha.add(true, true);
-        for (boolean test1 : test) {
-            System.out.println(test1);
-        }
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geben Sie den ersten boolean Wert an: ");
@@ -20,5 +17,6 @@ public class Main {
         int carry = adderResult[1] ? 1 : 0;
         scanner.close();
         System.out.println("Die Summe lautet: " + sum + ", der Übertrag beträgt: " + carry);
+        ha.info();
     }
 }
