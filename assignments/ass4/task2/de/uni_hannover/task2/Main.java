@@ -1,7 +1,7 @@
 package de.uni_hannover.task2;
 
 import de.uni_hannover.task2.offerings.Category;
-import javax.naming.AuthenticationException;
+import de.uni_hannover.task2.auth.Admin;
 import de.uni_hannover.task2.auth.User;
 import de.uni_hannover.task2.offerings.Item;
 
@@ -9,32 +9,18 @@ class Main {
     public static void main(String[] args) {
         User User1 = newUser("DNF", Category.ANIMALS);
         User User2 = newUser("KNF", Category.ELECTRONICS);
+        Admin admin = new Admin("admin", "sudo");
         Marketplace mp = new Marketplace();
         mp.addUser(User1);
         mp.addUser(User2);
-        System.out.println("Filtering a category");
-        System.out.println(mp.filterMarket(Category.ANIMALS));
-        System.out.println();
-        System.out.println();
-        System.out.println("Two users:");
-        System.out.println(mp.str());
-        System.out.println();
-        Item[] items = User1.getItems();
-        try {
-            items[0].setPrice(69420, User1.getPassword());
-        } catch (AuthenticationException e) {
-            System.out.println(e);
+        mp.addUser(admin);
+        User user = mp.login();
+        if (user.isAdmin()) {
+            mp.handleAdmin(user);
+        } else {
+            mp.handleUser(user);
         }
-        User1.setItems(items);
-        System.out.println();
-        System.out.println();
-        System.out.println("Changed Price");
-        System.out.println(mp.str());
-        System.out.println();
-        System.out.println();
-        System.out.println("User2 removed");
-        mp.removeUser(User2);
-        System.out.println(mp.str());
+
     }
 
     // UserCreator with random items

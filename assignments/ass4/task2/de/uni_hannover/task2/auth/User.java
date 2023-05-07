@@ -43,6 +43,15 @@ public class User {
     }
 
     /**
+     * Getter for the isAdmin attribute
+     * 
+     * @return whether a user is an admin
+     */
+    public boolean isAdmin() {
+        return this.isAdmin;
+    }
+
+    /**
      * Getter of the Username
      * 
      * @return the Username
