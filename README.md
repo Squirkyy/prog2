@@ -12,7 +12,7 @@ The repository contains five assignments, each of which is stored in its own sub
 
 -   [x] Assignment 3: 26.04.2023 -> 02.05.2023
 
--   [ ] Assignment 4: 03.05.2023 -> 09.05.2023
+-   [x] Assignment 4: 03.05.2023 -> 09.05.2023
 
 -   [ ] Assignment 5: 10.05.2023 -> 23.05.2023
 
