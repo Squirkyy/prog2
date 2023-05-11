@@ -29,9 +29,9 @@ public class MusketHill implements State {
      */
     public State transition(Action action) {
         if (action.str() == Action.A.str()) {
-            return A;
+            return new PiratesIsland();
         } else if (action.str() == Action.B.str()) {
-            return B;
+            return new MutineersIsland();
         } else {
             return null;
         }
@@ -49,10 +49,10 @@ public class MusketHill implements State {
      */
     public String info() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Action A -> ");
-        sb.append(A.str());
-        sb.append(", Action B -> ");
-        sb.append(B.str());
+        sb.append("Action A -> Pirates Island");
+        // sb.append(A.str());
+        sb.append(", Action B -> Mutineers Island");
+        // sb.append(B.str());
         return sb.toString();
     }
 
