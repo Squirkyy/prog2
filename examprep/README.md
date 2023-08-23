@@ -1,2 +1,27 @@
 # Altklausren Repo aus FINF-Cloud
-[ ] Barcode
+-  [ ] Barcode
+-  [ ] Baum
+-  [ ] Bierfass
+-  [ ] Blocksatz
+-  [ ] Caeser - decrypt
+-  [ ] Caeser - encrypt
+-  [ ] Dekomprimieren
+-  [ ] Eimer
+-  [ ] Fahrzeuge
+-  [ ] Haus - hatHoehe
+-  [ ] Haus - maxSort
+-  [ ] Haustiere
+-  [ ] Kommentare entfernen
+-  [ ] Komprimieren
+-  [ ] Motorrad
+-  [ ] Numberanalyse
+-  [ ] Point 1+2
+-  [ ] Quicksort
+-  [ ] Rechtsbündig
+-  [ ] Shapesearch
+-  [ ] Sicheres Passwort
+-  [ ] Textanalyse
+-  [ ] Transcipher - decrypt
+-  [ ] Transcipher - encrypt
+-  [ ] Verkettete Liste geordnet
+-  [ ] Wörterwürfeln
