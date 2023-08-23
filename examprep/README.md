@@ -20,7 +20,7 @@
 -  [ ] Rechtsbündig
 -  [ ] Shapesearch
 -  [ ] Sicheres Passwort
--  [ ] Textanalyse
+-  [X] Textanalyse
 -  [ ] Transcipher - decrypt
 -  [ ] Transcipher - encrypt
 -  [ ] Verkettete Liste geordnet
