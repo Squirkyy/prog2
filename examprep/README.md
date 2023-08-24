@@ -13,7 +13,7 @@
 -  [ ] Haustiere
 -  [ ] Kommentare entfernen
 -  [ ] Komprimieren
--  [ ] Motorrad
+-  [X] Motorrad (30:49m)
 -  [ ] Numberanalyse
 -  [ ] Point 1+2
 -  [ ] Quicksort
