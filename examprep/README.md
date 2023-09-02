@@ -10,7 +10,7 @@
 -  [ ] Fahrzeuge
 -  [ ] Haus - hatHoehe
 -  [ ] Haus - maxSort
--  [ ] Haustiere
+-  [X] Haustiere (44:12m)
 -  [ ] Kommentare entfernen
 -  [ ] Komprimieren
 -  [X] Motorrad (30:49m)
