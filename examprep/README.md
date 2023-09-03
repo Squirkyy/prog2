@@ -14,7 +14,7 @@
 -  [ ] Kommentare entfernen
 -  [ ] Komprimieren
 -  [X] Motorrad (30:49m)
--  [ ] Numberanalyse
+-  [X] Numberanalyse(24:28m)
 -  [X] Point 1+2 (20:23m)
 -  [ ] Quicksort
 -  [ ] Rechtsbündig
