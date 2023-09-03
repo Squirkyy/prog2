@@ -15,7 +15,7 @@
 -  [ ] Komprimieren
 -  [X] Motorrad (30:49m)
 -  [ ] Numberanalyse
--  [ ] Point 1+2
+-  [X] Point 1+2 (20:23m)
 -  [ ] Quicksort
 -  [ ] Rechtsbündig
 -  [ ] Shapesearch
