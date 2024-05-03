@@ -35,3 +35,4 @@ java NAME.java
 ## Credits
 
 This repository was created by Darius Vollmer. If you have any questions or comments, please feel free to reach out to me.
+Powered by GPT to make this look okay.
